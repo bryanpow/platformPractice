@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vite-service
+spec:
+  selector:
+    app: vite  # Match the label of the deployment
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: NodePort  # Use NodePort to expose the service locally

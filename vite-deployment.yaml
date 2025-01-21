@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vite-deployment
+spec:
+  replicas: 1  # Adjust the number of replicas here
+  selector:
+    matchLabels:
+      app: vite
+  template:
+    metadata:
+      labels:
+        app: vite
+    spec:
+      containers:
+        - name: vite
+          image: platform-practice
+          ports:
+            - containerPort: 8080
